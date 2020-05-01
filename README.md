@@ -1,5 +1,8 @@
 # plot-det-curve
-This repository proposes examples of DET (Detection error tradeoff) curve plot. For the moment, only one example in file *example1.py* is 
+This repository proposes examples of DET (Detection error tradeoff) curve plot. For the moment, only one example in file *example1.py* is available.
+
+> A detection error tradeoff (DET) graph is a graphical plot of error rates for binary classification systems, plotting the false rejection rate vs. false acceptance rate.
+> - [wikipedia definition](https://en.wikipedia.org/wiki/Detection_error_tradeoff)
 
 ## Install requirements
 To use this code, you only need to install python and then install the requirements using the following command:

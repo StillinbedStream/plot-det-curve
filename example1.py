@@ -1,6 +1,7 @@
 
 # Imports
 from sidekit.bosaris import DetPlot
+from sidekit.bosaris.detplot import __probit__ as probit
 import numpy as np
 import matplotlib.pyplot as plt
 from random import gauss
@@ -40,6 +41,17 @@ detPlot.plot_steppy_det(idx=1)
 # As you can see, you can give as argument the plot_args,
 # which is a tuple of size three => (color, line style, line size)
 
+# Modifiate ticks with rates
+range_ratios = np.arange(0.1, 1, 0.1)
+ax = plt.gca()
+xmin, xmax = ax.get_xlim()
+ymin, ymax = ax.get_ylim()
+plt.xticks(list(probit(range_ratios)) + [xmin, xmax], ["{:.1f}".format(i) for i in range_ratios] + [0, 1])
+plt.yticks(list(probit(range_ratios)) + [ymin, ymax], ["{:.1f}".format(i) for i in range_ratios] + [0, 1])
+plt.tick_params(axis="both", labelsize="5")
+
+plt.xlabel("false acceptance rate")
+plt.ylabel("false rejection rate")
 
 # Finally, we show only in pdf mod !
 plt.savefig("example1.pdf")
